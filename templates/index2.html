@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wine Quality Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Enter Wine Characteristics</h1>
+
+    <form method="POST" action="{{ url_for('predict') }}">
+      <label for="fixed_acidity">Fixed Acidity:</label>
+      <input type="number" step="any" name="fixed_acidity" required
+             placeholder="e.g., 7.4"
+             value="{{ values.fixed_acidity if values and values.fixed_acidity }}"><br><br>
+
+      <label for="volatile_acidity">Volatile Acidity:</label>
+      <input type="number" step="any" name="volatile_acidity" required
+             placeholder="e.g., 0.70"
+             value="{{ values.volatile_acidity if values and values.volatile_acidity }}"><br><br>
+
+      <label for="citric_acid">Citric Acid:</label>
+      <input type="number" step="any" name="citric_acid" required
+             placeholder="e.g., 0.00"
+             value="{{ values.citric_acid if values and values.citric_acid }}"><br><br>
+
+      <label for="residual_sugar">Residual Sugar:</label>
+      <input type="number" step="any" name="residual_sugar" required
+             placeholder="e.g., 1.9"
+             value="{{ values.residual_sugar if values and values.residual_sugar }}"><br><br>
+
+      <label for="chlorides">Chlorides:</label>
+      <input type="number" step="any" name="chlorides" required
+             placeholder="e.g., 0.076"
+             value="{{ values.chlorides if values and values.chlorides }}"><br><br>
+
+      <label for="free_sulfur_dioxide">Free Sulfur Dioxide:</label>
+      <input type="number" step="any" name="free_sulfur_dioxide" required
+             placeholder="e.g., 11.0"
+             value="{{ values.free_sulfur_dioxide if values and values.free_sulfur_dioxide }}"><br><br>
+
+      <label for="total_sulfur_dioxide">Total Sulfur Dioxide:</label>
+      <input type="number" step="any" name="total_sulfur_dioxide" required
+             placeholder="e.g., 34.0"
+             value="{{ values.total_sulfur_dioxide if values and values.total_sulfur_dioxide }}"><br><br>
+
+      <label for="density">Density:</label>
+      <input type="number" step="any" name="density" required
+             placeholder="e.g., 0.9978"
+             value="{{ values.density if values and values.density }}"><br><br>
+
+      <label for="ph">pH:</label>
+      <input type="number" step="any" name="ph" required
+             placeholder="e.g., 3.51"
+             value="{{ values.ph if values and values.ph }}"><br><br>
+
+      <label for="sulphates">Sulphates:</label>
+      <input type="number" step="any" name="sulphates" required
+             placeholder="e.g., 0.56"
+             value="{{ values.sulphates if values and values.sulphates }}"><br><br>
+
+      <label for="alcohol">Alcohol:</label>
+      <input type="number" step="any" name="alcohol" required
+              placeholder="e.g., 9.4"
+            value="{{ values.alcohol if values and values.alcohol }}"><br><br>
+
+      <button type="submit" class="predict-btn">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <h2>{{ prediction }}</h2>
+    {% endif %}
+  </div>
+
+  <div class="nav">
+    <a href="{{ url_for('home') }}" class="nav-btn">Previous</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wine Classification</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  
+
+<body>
+
+
+<div class="hero-section">
+  <video auto play muted loop>
+  <source src="{{ url_for('static', filename='wine video.mp4') }}" type="video/mp4" />
+</video>
+
+
+  <div class="hero-text">
+    <h1 class="fade-in"> Wine Classification System</h1>
+    <p class="slide-up">
+      Explore the world of wine — from ancient traditions to AI-powered flavor analysis.
+    </p>
+  </div>
+</div>
+
+
+<section class="description-section">
+  <h2>History & Origin</h2>
+  <p>
+    Wine has been a symbol of culture, tradition, and celebration for over 8,000 years. 
+    It originated in the country of Georgia, where the earliest evidence of wine-making was found. 
+    From the ancient Greeks and Romans to today's AI-powered wine recommendations, 
+    the journey of wine is rich and evolving.
+  </p>
+
+  <p>
+    Modern wine classification uses factors like grape variety, region, aroma, alcohol content, and acidity. 
+    With data science, we can now classify wines with precision and even suggest perfect pairings.
+  </p>
+
+  <h2>Explore Wine Types</h2>
+  <div class="image-grid">
+  <img src="{{ url_for('static', filename='red wine.jpg') }}" alt="Red Wine" />
+  <img src="{{ url_for('static', filename='wine.jpg') }}" alt="Wine Bottles" />
+  <img src="{{ url_for('static', filename='wine glass.avif') }}" alt="Wine Glass" />
+</div>
+
+
+<div class="nav">
+    <a href="{{ url_for('home2') }}" class="nav-btn">Next</a>
+
+  </div>  
+
+</body>
+</html>
